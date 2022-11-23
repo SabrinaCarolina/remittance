@@ -9,6 +9,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -17,6 +18,10 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
     private Header header;
     private List<Details> details;
     private Trailer trailer;
+
+    public LayoutBradesco() {
+        this.details = new ArrayList<>();
+    }
 
     @Getter
     @Setter
@@ -39,7 +44,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
          */
         @AttSpec(length = 7, value = "REMESSA")
         private String literalRemessa;
-        @AttSpec(length = 20, orientation = FillOrientation.LEFT, fillChar = '0')
+        @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
         private int codigoServico;
         /**
          * Default: COBRANCA

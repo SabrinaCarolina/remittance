@@ -96,7 +96,7 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         private int codigoRegistro;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private int tipoInscricao;
-        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0')
+        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroBeneficiario;
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0')
         private String prefixoCooperativa;

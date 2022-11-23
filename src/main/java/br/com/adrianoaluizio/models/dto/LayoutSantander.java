@@ -9,6 +9,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -17,6 +18,10 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
     private Header header;
     private List<Details> details;
     private Trailer trailer;
+
+    public LayoutSantander() {
+        this.details = new ArrayList<>();
+    }
 
     @Getter
     @Setter

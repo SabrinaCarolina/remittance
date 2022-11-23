@@ -95,11 +95,11 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         private Integer codigoRegistro;
         @AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
         private Integer tipoInscricaoEmpresa;
-        @AttSpec(length=14, orientation=FillOrientation.LEFT, fillChar='0')
+        @AttSpec(length=14, orientation=FillOrientation.LEFT, fillChar='0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroInscricaoEmpresa;
         @AttSpec(length=4, orientation=FillOrientation.LEFT, fillChar='0')
         private String codigoAgencia;
-        @AttSpec(length=5, orientation=FillOrientation.LEFT, fillChar='0')
+        @AttSpec(length=6, orientation=FillOrientation.LEFT, fillChar='0')
         private String codigoBeneficiario;
         @AttSpec(orientation=FillOrientation.LEFT, fillChar='0')
         private Integer idEmissao;

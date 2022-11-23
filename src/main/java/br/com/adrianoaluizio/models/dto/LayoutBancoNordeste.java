@@ -158,7 +158,7 @@ public class LayoutBancoNordeste implements Layout<LayoutBancoNordeste.Header.He
         private BigDecimal valorAbatimento;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private int tipoInscricaoPagador;
-        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0')
+        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroInscricaoPagador;
         @AttSpec(length = 40)
         private String nomePagador;

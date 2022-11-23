@@ -109,7 +109,7 @@ public class LayoutBB implements Layout<LayoutBB.Header.HeaderBuilder, LayoutBB.
         private String complementoRegistro3;
         @AttSpec()
         private String indicativoMensagemSacadorAvalista;
-        @AttSpec()
+        @AttSpec(length = 3)
         private String prefixoTitulo;
         @AttSpec(length = 3, orientation = FillOrientation.LEFT, fillChar = '0')
         private String variacaoCarteira;

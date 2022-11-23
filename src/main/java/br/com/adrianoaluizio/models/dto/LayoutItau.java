@@ -9,6 +9,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -17,6 +18,10 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
     private Header header;
     private List<Details> details;
     private Trailer trailer;
+
+    public LayoutItau() {
+        this.details = new ArrayList<>();
+    }
 
     @Getter
     @Setter
@@ -71,7 +76,7 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
         private int identificacaoRegistro;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
         private int tipoInscricaoCedente;
-        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0')
+        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroInscricao;
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0')
         private String prefixoAgencia;
