@@ -114,7 +114,7 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
         private String numeroBanco;
         @AttSpec(length = 5, orientation = FillOrientation.LEFT, fillChar = '0')
         private String agenciaCobradora;
-        @AttSpec(length = 2)
+        @AttSpec(length = 2, fillChar = '0', value = "02")
         private String especieTitulo;
         @AttSpec()
         private String aceiteTitulo;

@@ -135,8 +135,8 @@ public class LayoutBB implements Layout<LayoutBB.Header.HeaderBuilder, LayoutBB.
         private String prefixoAgenciaCobradora;
         @AttSpec()
         private String digitoVerificadorAgenciaCobradora;
-        @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private long especieTitulo;
+        @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0', value = "02")
+        private String especieTitulo;
         @AttSpec()
         private String aceiteTitulo;
         @AttSpec(length = 6, format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)

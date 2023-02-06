@@ -137,7 +137,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         private String bancoCobranca;
         @AttSpec(length = 5, orientation = FillOrientation.LEFT, fillChar = '0')
         private String agenciaDepositaria;
-        @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
+        @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0', value = "02")
         private String especieTitulo;
         /**
          * Default: N

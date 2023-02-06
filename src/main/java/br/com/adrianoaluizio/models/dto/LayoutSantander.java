@@ -140,8 +140,8 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         private String numeroBancoCobrador;
         @AttSpec(length = 5, orientation = FillOrientation.LEFT, fillChar = '0')
         private int codigoAgenciaCobradora;
-        @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int especieDocumento;
+        @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0', value = "02")
+        private String especieDocumento;
         /**
          * Default: N
          */

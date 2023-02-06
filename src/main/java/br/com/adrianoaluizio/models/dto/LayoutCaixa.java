@@ -139,8 +139,8 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         private String numeroBancoCobrador;
         @AttSpec(length=5, orientation=FillOrientation.LEFT, fillChar='0')
         private Integer agenciaCobradora;
-        @AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
-        private Integer especieTitulo;
+        @AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0', value = "02")
+        private String especieTitulo;
         @AttSpec()
         private String tipoAceite;
         @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
