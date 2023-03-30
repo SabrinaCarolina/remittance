@@ -20,4 +20,5 @@ public @interface AttSpec {
     boolean required() default false;
     CleanerType cleanerType() default CleanerType.ACCENTS;
     String reference() default "";
+    boolean breakLine() default false;
 }
