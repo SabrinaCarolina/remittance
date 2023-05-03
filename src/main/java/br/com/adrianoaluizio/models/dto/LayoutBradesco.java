@@ -45,7 +45,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec(length = 7, value = "REMESSA")
         private String literalRemessa;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoServico;
+        private Integer codigoServico;
         /**
          * Default: COBRANCA
          */
@@ -62,7 +62,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
          */
         @AttSpec(length = 15, value = "BRADESCO")
         private String nomeBanco;
-        @AttSpec(length = 6, format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)
+        @AttSpec(length = 6, format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY, fillChar = '0')
         private LocalDate dataGravacao;
         @AttSpec(length = 8)
         private final String branco = "";
@@ -73,7 +73,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec(length = 277)
         private final String branco1 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int numeroSequencialRegistro;
+        private Integer numeroSequencialRegistro;
     }
 
     @Getter
@@ -86,7 +86,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
          * Default: 1
          */
         @AttSpec(value = "1")
-        private int codigoRegistro;
+        private Integer codigoRegistro;
         @AttSpec(length = 5, orientation = FillOrientation.LEFT, fillChar = '0')
         private String agenciaDebitoAuto;
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
@@ -104,11 +104,11 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec(length = 3, orientation = FillOrientation.LEFT, fillChar = '0')
         private String codigoBanco;
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
-        private int campoMulta;
+        private Integer campoMulta;
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal percentualMulta;
         @AttSpec(length = 11, orientation = FillOrientation.LEFT, fillChar = '0')
-        private long identificacaoTitulo;
+        private Long identificacaoTitulo;
         @AttSpec()
         private String digitoConferencia;
         @AttSpec(length = 10, orientation = FillOrientation.LEFT, fillChar = '0')
@@ -122,7 +122,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec()
         private String rateioCredito;
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
-        private int enderecamentoDebitoAutomatico;
+        private Integer enderecamentoDebitoAutomatico;
         @AttSpec(length = 2)
         private String quantidadePagamento;
         @AttSpec(length = 2, value = "01")
@@ -149,7 +149,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
         private String primeiraInstrucao;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int diasProtesto;
+        private Integer diasProtesto;
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal valorJurosMora;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)
@@ -161,8 +161,8 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal valorAbatimento;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int tipoInscricaoPagador;
-        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0')
+        private Integer tipoInscricaoPagador;
+        @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroInscricaoPagador;
         @AttSpec(length = 40)
         private String nomePagador;
@@ -170,12 +170,12 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         private String enderecoPagador;
         @AttSpec(length = 12)
         private String primeiraMensagem;
-        @AttSpec(length = 8, orientation = FillOrientation.LEFT, fillChar = '0')
+        @AttSpec(length = 8, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String cepPagador;
         @AttSpec(length = 60)
         private String segundaMensagem;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int sequencialRegistro;
+        private Integer sequencialRegistro;
     }
 
     @Getter
@@ -192,7 +192,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec(length = 393)
         private final String brancos = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int numeroSequencialRegistro;
+        private Integer numeroSequencialRegistro;
     }
 
     public void addHeader(Execute<Header.HeaderBuilder> builder) {

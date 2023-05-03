@@ -125,7 +125,7 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         @AttSpec(length=2, value="01", orientation=FillOrientation.LEFT, fillChar='0')
         private String codigoCarteira;
         @AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
-        private int codigoOcorrencia;
+        private Integer codigoOcorrencia;
         @AttSpec(length=10)
         private String seuNumero;
         @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
@@ -143,7 +143,7 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         private String especieTitulo;
         @AttSpec()
         private String tipoAceite;
-        @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
+        @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
         private LocalDate dataEmissaoTitulo;
         @AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
         private String primeiraInstrucaoCobranca;
@@ -151,7 +151,7 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         private Integer segundaInstrucaoCobranca;
         @AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal valorMoraCobradoDiaAtraso;
-        @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
+        @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
         private LocalDate dataLimiteDesconto;
         @AttSpec(length=13, format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY, orientation=FillOrientation.LEFT, fillChar='0')
         private BigDecimal valorDesconto;
@@ -161,7 +161,7 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         private BigDecimal valorAbatimento;
         @AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
         private Integer tipoInscricaoPagador;
-        @AttSpec(length=14, orientation=FillOrientation.LEFT, fillChar='0')
+        @AttSpec(length=14, orientation=FillOrientation.LEFT, fillChar='0', cleanerType = CleanerType.NUMBER_ONLY)
         private String inscricaoPagador;
         @AttSpec(length=40)
         private String nomePagador;
@@ -169,13 +169,13 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         private String enderecoPagador;
         @AttSpec(length=12)
         private String bairroPagador;
-        @AttSpec(length=8, orientation=FillOrientation.LEFT, fillChar='0')
+        @AttSpec(length=8, orientation=FillOrientation.LEFT, fillChar='0', cleanerType = CleanerType.NUMBER_ONLY)
         private String cepPagador;
         @AttSpec(length=15)
         private String cidadePagador;
         @AttSpec(length=2)
         private String ufPagador;
-        @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
+        @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
         private LocalDate dataMulta;
         @AttSpec(length=10, orientation=FillOrientation.LEFT, fillChar='0')
         private Integer valorMulta;

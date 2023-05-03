@@ -33,12 +33,12 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
          * default: 0
          */
         @AttSpec(value = "0", orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoDoRegistro;
+        private Integer codigoDoRegistro;
         /**
          * default: 1
          */
         @AttSpec(value = "1", orientation = FillOrientation.LEFT, fillChar = '0')
-        private int identificacaoRemessa;
+        private Integer identificacaoRemessa;
         /**
          * default: REMESSA
          */
@@ -48,7 +48,7 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
          * default: 01
          */
         @AttSpec(length = 2, value = "01", orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoServico;
+        private Integer codigoServico;
         /**
          * default: COBRANCA
          */
@@ -59,7 +59,7 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0')
         private String prefixoCooperativa;
         @AttSpec(cleanerType = CleanerType.NUMBER_ONLY)
-        private int digitoVerificadorPrefixo;
+        private Integer digitoVerificadorPrefixo;
         @AttSpec(length = 8, orientation = FillOrientation.LEFT, fillChar = '0')
         private String codigoCliente;
         @AttSpec()
@@ -80,7 +80,7 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec(length = 287)
         private final String brancos2 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int numeroSequencialRegistro;
+        private Integer numeroSequencialRegistro;
     }
 
     @Getter
@@ -93,9 +93,9 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
          * default: 1
          */
         @AttSpec(value = "1", orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoRegistro;
+        private Integer codigoRegistro;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
-        private int tipoInscricao;
+        private Integer tipoInscricao;
         @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroBeneficiario;
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0')
@@ -107,11 +107,11 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec()
         private String digitoConta;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
-        private long numeroBanco;
+        private Long numeroBanco;
         @AttSpec(length = 25)
         private String campoLivre;
         @AttSpec(length = 12, orientation = FillOrientation.LEFT, fillChar = '0')
-        private long nossoNumero;
+        private Long nossoNumero;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
         private String numeroParcela;
         @AttSpec(length = 2, value = "00", orientation = FillOrientation.LEFT, fillChar = '0')
@@ -125,13 +125,13 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec(length = 3, value = "000", orientation = FillOrientation.LEFT, fillChar = '0')
         private String variacaoCarteira;
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
-        private int contaCaucao;
+        private Integer contaCaucao;
         @AttSpec(length = 5, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
-        private int numeroContrato;
+        private Integer numeroContrato;
         @AttSpec()
-        private int dvContrato;
+        private Integer dvContrato;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
-        private int numeroBordero;
+        private Integer numeroBordero;
         @AttSpec(length = 5)
         private final String brancos2 = "";
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
@@ -177,7 +177,7 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal valorAbatimento;
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
-        private int tipoInscricao1;
+        private Integer tipoInscricao1;
         @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String documentoPagador;
         @AttSpec(length = 40)
@@ -195,11 +195,11 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec(length = 40)
         private String observacoes;
         @AttSpec(length = 2)
-        private int numDiasProtesto;
+        private Integer numDiasProtesto;
         @AttSpec()
         private final String brancos3 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int numeroSequencialRegistro;
+        private Integer numeroSequencialRegistro;
     }
 
     @Getter
@@ -216,7 +216,7 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec(length = 393)
         private final String brancos = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int numeroSequencialRegistro;
+        private Integer numeroSequencialRegistro;
     }
 
     public void addHeader(Execute<Header.HeaderBuilder> builder) {

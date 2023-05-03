@@ -17,8 +17,11 @@ public interface AttSpecProcessor {
 			if(declaredField.isAnnotationPresent(AttSpec.class)) {
 				AttSpec annotation = declaredField.getAnnotation(AttSpec.class);
 				if(annotation.breakLine()) {
-					line.append("\n");
-					line.append(((AttSpecProcessor) assistant.getValue(declaredField, this)).render());
+					AttSpecProcessor value = (AttSpecProcessor) assistant.getValue(declaredField, this);
+					if(value != null) {
+						line.append("\n");
+						line.append((value).render());
+					}
 				} else {
 					if(annotation.length() < 0) {
 						throw new UnsupportedOperationException("Invalid length validation");

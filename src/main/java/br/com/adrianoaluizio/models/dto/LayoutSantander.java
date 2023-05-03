@@ -30,7 +30,7 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
     @AllArgsConstructor
     public static class Header implements AttSpecProcessor {
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoRegistro;
+        private Integer codigoRegistro;
         /**
          * Default: 1
          */
@@ -86,7 +86,7 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(length = 3, orientation = FillOrientation.LEFT, fillChar = '0')
         private String numeroRemessaOpcional;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int numeroSequencialRegistro;
+        private Integer numeroSequencialRegistro;
     }
 
     @Getter
@@ -101,7 +101,7 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(value = "1", orientation = FillOrientation.LEFT, fillChar = '0')
         private String codigoRegistro;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int tipoInscricaoBeneficiario;
+        private Integer tipoInscricaoBeneficiario;
         @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroCnpjcpfBeneficiario;
         @AttSpec(length = 20, orientation = FillOrientation.LEFT, fillChar = '0')
@@ -109,13 +109,13 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(length = 25)
         private String numeroControleCliente;
         @AttSpec(length = 8, orientation = FillOrientation.LEFT, fillChar = '0')
-        private long nossoNumero;
+        private Long nossoNumero;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)
         private LocalDate dataSegundoDesconto;
         @AttSpec()
         private final String branco = "";
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
-        private int informacaoMulta;
+        private Integer informacaoMulta;
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY, format = Format.DECIMAL_DD)
         private BigDecimal percentualMultaAtraso;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
@@ -127,9 +127,9 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)
         private LocalDate dataCobrancaMulta;
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoCarteira;
+        private Integer codigoCarteira;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoOcorrencia;
+        private Integer codigoOcorrencia;
         @AttSpec(length = 10)
         private String seuNumero;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)
@@ -139,7 +139,7 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(length = 3)
         private String numeroBancoCobrador;
         @AttSpec(length = 5, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int codigoAgenciaCobradora;
+        private Integer codigoAgenciaCobradora;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0', value = "02")
         private String especieDocumento;
         /**
@@ -164,7 +164,7 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal valorAbatimento;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int tipoInscricaoPagador;
+        private Integer tipoInscricaoPagador;
         @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String cnpjcpfPagador;
         @AttSpec(length = 40)
@@ -190,11 +190,11 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(length = 6)
         private final String brancos2 = "";
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int numeroDiasProtesto;
+        private Integer numeroDiasProtesto;
         @AttSpec()
         private final String branco3 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int sequencialRegistro;
+        private Integer sequencialRegistro;
     }
 
     @Getter
@@ -209,7 +209,7 @@ public class LayoutSantander implements Layout<LayoutSantander.Header.HeaderBuil
         @AttSpec(value = "9")
         private String codigoDoRegistro;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int quantidadeDocumentos;
+        private Integer quantidadeDocumentos;
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal valorTotalTitulos;
         @AttSpec(length = 374, orientation = FillOrientation.LEFT, fillChar = '0')

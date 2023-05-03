@@ -30,9 +30,9 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
     @AllArgsConstructor
     public static class Header implements AttSpecProcessor {
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
-        private int identificacaoRegistro;
+        private Integer identificacaoRegistro;
         @AttSpec(orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
-        private int tipoOperacao;
+        private Integer tipoOperacao;
         @AttSpec(length = 7)
         private String identificacaoExtensoMovimento;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
@@ -60,7 +60,7 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
         @AttSpec(length = 294)
         private final String complemento2 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int sequencialRemessa;
+        private Integer sequencialRemessa;
     }
 
     @Getter
@@ -73,9 +73,9 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
          * Default: 1
          */
         @AttSpec(value = "1")
-        private int identificacaoRegistro;
+        private Integer identificacaoRegistro;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int tipoInscricaoCedente;
+        private Integer tipoInscricaoCedente;
         @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String numeroInscricao;
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0')
@@ -91,9 +91,9 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
         @AttSpec(length = 4, orientation = FillOrientation.LEFT, fillChar = '0')
         private String codInstrucaoAlegacao;
         @AttSpec(length = 25, orientation = FillOrientation.LEFT, fillChar = '0')
-        private long identificacaoTitulo;
+        private Long identificacaoTitulo;
         @AttSpec(length = 8, orientation = FillOrientation.LEFT, fillChar = '0')
-        private long nossoNumero;
+        private Long nossoNumero;
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal qtdMoeda;
         @AttSpec(length = 3, orientation = FillOrientation.LEFT, fillChar = '0')
@@ -103,9 +103,9 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
         @AttSpec()
         private String carteira;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int ocorrencia;
+        private Integer ocorrencia;
         @AttSpec(length = 10, orientation = FillOrientation.LEFT, fillChar = '0')
-        private long numeroDoc;
+        private Long numeroDoc;
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)
         private LocalDate dataVencimento;
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
@@ -135,7 +135,7 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
         @AttSpec(length = 13, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
         private BigDecimal valorAbatimento;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int tipoInscricaoSacado;
+        private Integer tipoInscricaoSacado;
         @AttSpec(length = 14, orientation = FillOrientation.LEFT, fillChar = '0', cleanerType = CleanerType.NUMBER_ONLY)
         private String cpfSacado;
         @AttSpec(length = 30)
@@ -159,11 +159,33 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DATE_DDMMYY, cleanerType = CleanerType.NUMBER_ONLY)
         private LocalDate dataMora;
         @AttSpec(length = 2, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int diasMora;
+        private Integer diasMora;
         @AttSpec()
         private final String complementoRegistro1 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
-        private int sequencialRegistro;
+        private Integer sequencialRegistro;
+        @AttSpec(breakLine=true)
+        private LayoutItau.Details.Multa multa;
+
+        @Getter
+        @Setter
+        @Builder
+        @AllArgsConstructor
+        @NoArgsConstructor
+        public static class Multa implements AttSpecProcessor {
+            @AttSpec()
+            private Long tipoServico;
+            @AttSpec()
+            private String codigoMulta;
+            @AttSpec(length=8, format=Format.DATE_DDMMYY, fillChar='0', orientation=FillOrientation.LEFT)
+            private LocalDate dataInicio;
+            @AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)
+            private BigDecimal valorMulta;
+            @AttSpec(length=371)
+            private String branco;
+            @AttSpec(length=6, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
+            private Long numeroSequencial;
+        }
     }
 
     @Getter

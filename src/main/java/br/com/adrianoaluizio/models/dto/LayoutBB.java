@@ -63,7 +63,7 @@ public class LayoutBB implements
 		@AttSpec(length=6, format=Format.DATE_DDMMYY, orientation=FillOrientation.LEFT, fillChar='0')
 		private LocalDate dataGravacao;
 		@AttSpec(length=7, orientation=FillOrientation.LEFT, fillChar='0')
-		private long sequencialRemessa;
+		private Long sequencialRemessa;
 		@AttSpec(length=22)
 		private final String complementoRegistro22 = "";
 		@AttSpec(length=7, orientation=FillOrientation.LEFT, fillChar='0')
@@ -71,7 +71,7 @@ public class LayoutBB implements
 		@AttSpec(length=258)
 		private final String complementoRegistro258 = "";
 		@AttSpec(length=6, orientation=FillOrientation.LEFT, fillChar='0')
-		private long sequencialRegistro;
+		private Long sequencialRegistro;
 
 	}
 
@@ -84,7 +84,7 @@ public class LayoutBB implements
 		@AttSpec(value="7")
 		private String identificacaoRegistro;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-		private long tipoInscricaoCedente;
+		private Long tipoInscricaoCedente;
 		@AttSpec(length=14, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
 		private String numeroCpfCliente;
 		@AttSpec(length=4, orientation=FillOrientation.LEFT, fillChar='0')
@@ -98,15 +98,15 @@ public class LayoutBB implements
 		@AttSpec(length=7, orientation=FillOrientation.LEFT, fillChar='0')
 		private String numeroConvenioCliente;
 		@AttSpec(length=25)
-		private long codigoControleEmpresa;
+		private Long codigoControleEmpresa;
 		@AttSpec(length=7, orientation=FillOrientation.LEFT, fillChar='0')
 		private String convenioNn;
 		@AttSpec(length=10, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-		private long nossoNumero;
+		private Long nossoNumero;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-		private long numeroPrestacao;
+		private Long numeroPrestacao;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-		private long grupoValor;
+		private Long grupoValor;
 		@AttSpec(length=3)
 		private String complementoRegistro3;
 		@AttSpec()
@@ -116,23 +116,23 @@ public class LayoutBB implements
 		@AttSpec(length=3, orientation=FillOrientation.LEFT, fillChar='0')
 		private String variacaoCarteira;
 		@AttSpec(orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-		private long contaCaucao;
+		private Long contaCaucao;
 		@AttSpec(length=6, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-		private long numeroBordero;
+		private Long numeroBordero;
 		@AttSpec(length=5)
 		private String tipoCobranca;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
 		private String carteiraCobranca;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
-		private long comando;
+		private Long comando;
 		@AttSpec(length=10, orientation=FillOrientation.LEFT, fillChar='0')
-		private long numeroTitulo;
-		@AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
+		private Long numeroTitulo;
+		@AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
 		private LocalDate dataVencimento;
 		@AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)
 		private BigDecimal valorTitulo;
 		@AttSpec(length=3, orientation=FillOrientation.LEFT, fillChar='0')
-		private long numeroBanco;
+		private Long numeroBanco;
 		@AttSpec(length=4, orientation=FillOrientation.LEFT, fillChar='0')
 		private String prefixoAgenciaCobradora;
 		@AttSpec()
@@ -141,7 +141,7 @@ public class LayoutBB implements
 		private String especieTitulo;
 		@AttSpec()
 		private String aceiteTitulo;
-		@AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
+		@AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
 		private LocalDate dataEmissaoTitulo;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
 		private String instrucaoCodificada1;
@@ -149,7 +149,7 @@ public class LayoutBB implements
 		private String instrucaoCodificada2;
 		@AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)
 		private BigDecimal jurosMora;
-		@AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY)
+		@AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
 		private LocalDate dataLimiteDesconto;
 		@AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)
 		private BigDecimal valorDesconto;
@@ -158,7 +158,7 @@ public class LayoutBB implements
 		@AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)
 		private BigDecimal valorAbatimento;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
-		private long tipoInscricaoSacado;
+		private Long tipoInscricaoSacado;
 		@AttSpec(length=14, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
 		private String cpfSacado;
 		@AttSpec(length=37)
@@ -182,7 +182,7 @@ public class LayoutBB implements
 		@AttSpec()
 		private String complementoRegistro;
 		@AttSpec(length=6, orientation=FillOrientation.LEFT, fillChar='0')
-		private long sequencialRegistro;
+		private Long sequencialRegistro;
 		@AttSpec(breakLine=true)
 		private Multa multa;
 
@@ -198,7 +198,7 @@ public class LayoutBB implements
 			@AttSpec(length=2)
 			private String tipoServico;
 			@AttSpec()
-			private long codigoMulta;
+			private Long codigoMulta;
 			@AttSpec(length=6, format=Format.DATE_DDMMYY, fillChar='0', orientation=FillOrientation.LEFT)
 			private LocalDate dataInicio;
 			@AttSpec(length=12, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)
@@ -206,7 +206,7 @@ public class LayoutBB implements
 			@AttSpec(length=372)
 			private String branco;
 			@AttSpec(length=6, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-			private long numeroSequencial;
+			private Long numeroSequencial;
 		}
 	}
 
@@ -224,7 +224,7 @@ public class LayoutBB implements
 		@AttSpec(length=393)
 		private final String filter = "";
 		@AttSpec(length=6, orientation=FillOrientation.LEFT, fillChar='0', cleanerType=CleanerType.NUMBER_ONLY)
-		private long numeroSequencialRegistro;
+		private Long numeroSequencialRegistro;
 	}
 
 	public void addHeader(Execute<Header.HeaderBuilder> builder) {
