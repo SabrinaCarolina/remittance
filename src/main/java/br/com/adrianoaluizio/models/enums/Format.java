@@ -24,6 +24,14 @@ public enum Format {
             }
             return SuppleDate.of((LocalDate) o).format(Shape.BASIC_D2).toString();
         }
+    }, DATE_DDMMYYYY {
+        @Override
+        public String format(Object o) {
+            if (o == null) {
+                return "";
+            }
+            return SuppleDate.of((LocalDate) o).format(Shape.BASIC_D4).toString();
+        }
     }, DECIMAL_DD {
         @Override
         public String format(Object o) {

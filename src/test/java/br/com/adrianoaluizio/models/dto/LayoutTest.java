@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,52 +28,52 @@ class LayoutTest {
 		                   .sequencialRegistro(1L)
 		            );
 
-		LayoutBB.Details.Multa interest = LayoutBB.Details.Multa.builder()
-		                                                        .tipoServico("tt")
-		                                                        .codigoMulta(1L)
-		                                                        .valorMulta(BigDecimal.TEN)
-		                                                        .dataInicio(LocalDate.now())
-		                                                        .numeroSequencial(1L)
-		                                                        .build();
-
-		bb.addDetails(d ->
-				              d.tipoInscricaoCedente(2L)
-				               .numeroCpfCliente("34265115845")
-				               .prefixoAgencia("2345")
-				               .digitoVerificadorAgencia("32")
-				               .numeroContaCorrente("65855")
-				               .digitoConta("7")
-				               .numeroConvenioCliente("365")
-				               .codigoControleEmpresa(2L)
-				               .nossoNumero(3L)
-				               .convenioNn("65478")
-				               .variacaoCarteira("8")
-				               .carteiraCobranca("98")
-				               .comando(1L)
-				               .numeroTitulo(98111L)
-				               .dataVencimento(LocalDate.now())
-				               .valorTitulo(BigDecimal.TEN)
-				               .numeroBanco(1L)
-				               .prefixoAgenciaCobradora("0000")
-				               .especieTitulo("44455")
-				               .aceiteTitulo("N")
-				               .dataVencimento(LocalDate.now())
-				               .dataEmissaoTitulo(LocalDate.now())
-				               .instrucaoCodificada1("teste")
-				               .instrucaoCodificada2("tyeste")
-				               .jurosMora(BigDecimal.ONE)
-				               .tipoInscricaoSacado(1L)
-				               .nomeSacado("adriano")
-				               .cpfSacado("34265115845")
-				               .enderecoSacado("teste")
-				               .bairroSacado("teste")
-				               .cepSacado("teste")
-				               .cidadeSacado("teste")
-				               .ufCidadeSacado("teste")
-				               .sequencialRegistro(1L)
-				               .multa(interest)
-		             );
-		bb.addTrailer(t -> t.numeroSequencialRegistro(1L)
+		AtomicReference<LayoutBB.Details.Multa> interest = new AtomicReference<>();
+		Execute<LayoutBB.Details.DetailsBuilder> e = d ->
+				d.tipoInscricaoCedente(2L)
+				 .numeroCpfCliente("34265115845")
+				 .prefixoAgencia("2345")
+				 .digitoVerificadorAgencia("32")
+				 .numeroContaCorrente("65855")
+				 .digitoConta("7")
+				 .numeroConvenioCliente("365")
+				 .codigoControleEmpresa(2L)
+				 .nossoNumero(3L)
+				 .convenioNn("65478")
+				 .variacaoCarteira("8")
+				 .carteiraCobranca("98")
+				 .comando(1L)
+				 .numeroTitulo(98111L)
+				 .dataVencimento(LocalDate.now())
+				 .valorTitulo(BigDecimal.TEN)
+				 .numeroBanco(1L)
+				 .prefixoAgenciaCobradora("0000")
+				 .especieTitulo("44455")
+				 .aceiteTitulo("N")
+				 .dataVencimento(LocalDate.now())
+				 .dataEmissaoTitulo(LocalDate.now())
+				 .instrucaoCodificada1("teste")
+				 .instrucaoCodificada2("tyeste")
+				 .jurosMora(BigDecimal.ONE)
+				 .tipoInscricaoSacado(1L)
+				 .nomeSacado("adriano")
+				 .cpfSacado("34265115845")
+				 .enderecoSacado("teste")
+				 .bairroSacado("teste")
+				 .cepSacado("teste")
+				 .cidadeSacado("teste")
+				 .ufCidadeSacado("teste")
+				 .sequencialRegistro(2L)
+				 .multa(interest.get());
+		interest.set(LayoutBB.Details.Multa.builder()
+		                                   .tipoServico("tt")
+		                                   .codigoMulta(1L)
+		                                   .valorMulta(BigDecimal.TEN)
+		                                   .dataInicio(LocalDate.now())
+		                                   .numeroSequencial(3L)
+		                                   .build());
+		bb.addDetails(e);
+		bb.addTrailer(t -> t.numeroSequencialRegistro(4L)
 		                    .codigoDoRegistro("zz"));
 		String render = bb.render();
 		System.out.println(render);
@@ -134,7 +135,7 @@ class LayoutTest {
 				               .cepSacado("teste")
 				               .cidadeSacado("teste")
 				               .ufCidadeSacado("teste")
-				               .sequencialRegistro(1L)
+				               .sequencialRegistro(2L)
 				               .multa(interest)
 		             );
 		bb.addTrailer(t -> t.numeroSequencialRegistro(1L)
@@ -154,7 +155,7 @@ class LayoutTest {
 				             .codigoBanco("12")
 				             .dataGravacao(LocalDate.now())
 				             .identificacaoRemessa("2")
-				             .numeroSequencialRemessa("98")
+				             .numeroSequencialRemessa(98)
 				             .numeroSequencialRegistro(1)
 		            );
 
@@ -175,11 +176,14 @@ class LayoutTest {
 	@Test
 	void renderItau() {
 		LayoutItau bb = new LayoutItau();
+
+		LayoutItau.Details.Multa interest = LayoutItau.Details.Multa.builder().dataInicio(LocalDate.now()).build();
 		bb.addHeader(h -> h.tipoOperacao(1)
 		            );
 
 		bb.addDetails(d ->
 				              d.tipoInscricaoCedente(66)
+						              .multa(interest)
 		             );
 		bb.addTrailer(t -> t.numeroSequencialRegistro("1")
 		                    .codigoDoRegistro("zz"));

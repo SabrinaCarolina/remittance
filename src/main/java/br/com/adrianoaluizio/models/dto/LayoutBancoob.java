@@ -76,7 +76,7 @@ public class LayoutBancoob implements Layout<LayoutBancoob.Header.HeaderBuilder,
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0', format = Format.DATE_DDMMYY)
         private LocalDate dataGravacao;
         @AttSpec(length = 7, orientation = FillOrientation.LEFT, fillChar = '0')
-        private String numeroSequencialRemessa;
+        private Integer numeroSequencialRemessa;
         @AttSpec(length = 287)
         private final String brancos2 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')
