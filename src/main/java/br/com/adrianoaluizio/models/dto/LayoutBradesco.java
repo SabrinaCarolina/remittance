@@ -69,7 +69,7 @@ public class LayoutBradesco implements Layout<LayoutBradesco.Header.HeaderBuilde
         @AttSpec(length = 2)
         private String identificacaoSistema;
         @AttSpec(length = 7, orientation = FillOrientation.LEFT, fillChar = '0')
-        private String numeroSequencialRemessa;
+        private Integer numeroSequencialRemessa;
         @AttSpec(length = 277)
         private final String branco1 = "";
         @AttSpec(length = 6, orientation = FillOrientation.LEFT, fillChar = '0')

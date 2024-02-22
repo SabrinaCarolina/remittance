@@ -177,7 +177,7 @@ public class LayoutItau implements Layout<LayoutItau.Header.HeaderBuilder, Layou
             private Long tipoServico;
             @AttSpec()
             private String codigoMulta;
-            @AttSpec(length=8, format=Format.DATE_DDMMYY, fillChar='0', orientation=FillOrientation.LEFT)
+            @AttSpec(length=8, format=Format.DATE_DDMMYYYY, fillChar='0', orientation=FillOrientation.LEFT)
             private LocalDate dataInicio;
             @AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)
             private BigDecimal valorMulta;

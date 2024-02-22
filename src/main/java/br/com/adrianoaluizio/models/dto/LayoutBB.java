@@ -125,8 +125,8 @@ public class LayoutBB implements
 		private String carteiraCobranca;
 		@AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
 		private Long comando;
-		@AttSpec(length=10, orientation=FillOrientation.LEFT, fillChar='0')
-		private Long numeroTitulo;
+		@AttSpec(length=10)
+		private String numeroTitulo;
 		@AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
 		private LocalDate dataVencimento;
 		@AttSpec(length=13, orientation=FillOrientation.LEFT, fillChar='0', format=Format.DECIMAL_DD, cleanerType=CleanerType.NUMBER_ONLY)

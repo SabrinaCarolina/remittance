@@ -177,8 +177,8 @@ public class LayoutCaixa implements Layout<LayoutCaixa.Header.HeaderBuilder, Lay
         private String ufPagador;
         @AttSpec(length=6, format=Format.DATE_DDMMYY, cleanerType=CleanerType.NUMBER_ONLY, fillChar = '0')
         private LocalDate dataMulta;
-        @AttSpec(length=10, orientation=FillOrientation.LEFT, fillChar='0')
-        private Integer valorMulta;
+        @AttSpec(length=10, orientation=FillOrientation.LEFT, fillChar='0', format = Format.DECIMAL_DD, cleanerType = CleanerType.NUMBER_ONLY)
+        private BigDecimal valorMulta;
         @AttSpec(length=22)
         private String nomeSacador;
         @AttSpec(length=2, orientation=FillOrientation.LEFT, fillChar='0')
